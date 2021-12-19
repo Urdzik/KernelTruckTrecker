@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330481219165",
+    "project_id": "cody-challenge",
+    "storage_bucket": "cody-challenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330481219165:android:5b0fd8026ca6248a58bfb4",
+        "android_client_info": {
+          "package_name": "com.kernel.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330481219165-1vmb16nv7iejp30rlf6u6d26ofojormc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdFBDOU8C06GwC0GTgzEPTe68kPfGCQsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330481219165-1vmb16nv7iejp30rlf6u6d26ofojormc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

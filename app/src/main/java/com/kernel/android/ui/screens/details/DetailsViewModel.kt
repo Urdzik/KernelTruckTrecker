@@ -15,11 +15,8 @@ import com.kernel.android.domain.model.TruckModel
 import com.kernel.android.domain.usecase.GetTruckInfoUseCase
 import com.kernel.android.domain.usecase.SubmitTruckFactUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.newCoroutineContext
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -32,13 +29,12 @@ class DetailsViewModel @Inject constructor(
     private val applicationContext: Application
 ) : AndroidViewModel(applicationContext) {
 
-    val viewModelHandleScope = viewModelScope.apply {
-        newCoroutineContext(handler + Dispatchers.IO)
-    }
-
-    val handler = CoroutineExceptionHandler { coroutineContext, throwable ->
+    private val handler = CoroutineExceptionHandler { coroutineContext, throwable ->
         _error.value = throwable.message.toString()
     }
+
+    private val viewModelHandleScope = viewModelScope + handler
+
 
     private val truckId = savedStateHandle.get<String>("truckId") ?: ""
 

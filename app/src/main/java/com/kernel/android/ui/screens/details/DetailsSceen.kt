@@ -85,7 +85,7 @@ fun DetailsScreen(
         }
     }
     Column(modifier = Modifier.padding(Padding.normal)) {
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentSize(Alignment.Center)
